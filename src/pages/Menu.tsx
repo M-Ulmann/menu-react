@@ -18,7 +18,11 @@ export function Menu(){
 
         <button className="button-dinner">Dinner</button>
 
-        <button className="button-sort-price">Sort Price</button>
+        <button className="button-sort-price">
+
+          <img className="sort-price-img" src="https://cdn-icons-png.flaticon.com/512/10407/10407117.png" alt="sort-price-icon" />
+
+        </button>
       </div>
 
       <div className="dishes-grid">
@@ -35,7 +39,51 @@ export function Menu(){
 
               <h2 className="dish-name">{foodList[0].name}</h2>
 
-              <p className="dish-price">{foodList[0].price}</p>
+              <p className="dish-price">${(foodList[0].price / 100).toFixed(2)}</p>
+
+            </div>
+            
+            <p className="dish-desc">{foodList[0].description}</p>
+
+          </div>
+
+        </div>
+
+        <div className="dish-container">
+
+          <div className="dish-img">
+            <img src={foodList[0].picture} alt="dish-img" />
+          </div>
+
+          <div className="dish-info">
+
+            <div className="dish-upper">
+
+              <h2 className="dish-name">{foodList[0].name}</h2>
+
+              <p className="dish-price">${(foodList[0].price / 100).toFixed(2)}</p>
+
+            </div>
+            
+            <p className="dish-desc">{foodList[0].description}</p>
+
+          </div>
+
+        </div>
+
+        <div className="dish-container">
+
+          <div className="dish-img">
+            <img src={foodList[0].picture} alt="dish-img" />
+          </div>
+
+          <div className="dish-info">
+
+            <div className="dish-upper">
+
+              <h2 className="dish-name">{foodList[0].name}</h2>
+
+              <p className="dish-price">${(foodList[0].price / 100).toFixed(2)}</p>
 
             </div>
             
