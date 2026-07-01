@@ -1,0 +1,15 @@
+.dishes-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  row-gap: 40px;
+  column-gap: 20px;
+
+  padding: 0px 10px;
+}
+
+@media (max-width: 1070px){
+  .dishes-grid{
+    grid-template-columns: 1fr;
+  }
+}
