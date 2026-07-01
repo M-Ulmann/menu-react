@@ -1,0 +1,22 @@
+.page-title{
+  position: relative;
+
+  font-size: var(--title-xl);
+  color: var(--default-clr-black-blue);
+  text-transform: capitalize;
+
+  margin-bottom: 50px;
+}
+
+.page-title::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+
+  height: 4px;
+  width: 50%;
+  background-color: rgb(197, 151, 33);
+}

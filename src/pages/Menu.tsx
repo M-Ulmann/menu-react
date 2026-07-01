@@ -1,10 +1,15 @@
 import { foodList } from "../assets/foodList";
 import './Menu.css';
+import { MenuTitle } from "./MenuTitle";
 
 export function Menu(){
+
+  
+
   return (
     <>
-      <h1 className="page-title">our menu</h1>
+
+      <MenuTitle />
 
       <div className="buttons-container">
 
