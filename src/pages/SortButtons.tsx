@@ -1,3 +1,4 @@
+import type React from 'react';
 import './SortButtons.css';
 
 interface props{
@@ -8,20 +9,28 @@ interface props{
 
 export function SortButtons({setSort, setIsAscending, isAscending} : props){
 
+  function sortState(e: React.MouseEvent<HTMLButtonElement>){
+    setSort(e.currentTarget.name)
+  }
+
+  function ascendingState(){
+    setIsAscending(!isAscending);
+  }
+
   return(
     <div className="buttons-container">
 
-      <button onClick={() => {setSort('all')}} className="button-all">All</button>
+      <button name='all' onClick={sortState} className="button-all">All</button>
 
-      <button onClick={() => {setSort('breakfast')}} className="button-breakfast">Breakfast</button>
+      <button name='breakfast' onClick={sortState} className="button-breakfast">Breakfast</button>
 
-      <button onClick={() => {setSort('lunch')}} className="button-lunch">Lunch</button>
+      <button name='lunch' onClick={sortState} className="button-lunch">Lunch</button>
 
-      <button onClick={() => {setSort('shakes')}} className="button-shakes">Shakes</button>
+      <button name='shakes' onClick={sortState} className="button-shakes">Shakes</button>
 
-      <button onClick={() => {setSort('dinner')}} className="button-dinner">Dinner</button>
+      <button name='dinner' onClick={(e) => console.log(e)} className="button-dinner">Dinner</button>
 
-      <button onClick={() => {setIsAscending(!isAscending)}} className="button-sort-price">
+      <button onClick={ascendingState} className="button-sort-price">
 
         <img className="sort-price-img" src="https://cdn-icons-png.flaticon.com/512/10407/10407117.png" alt="sort-price-icon" />
 
