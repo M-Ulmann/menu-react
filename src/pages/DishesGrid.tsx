@@ -1,11 +1,15 @@
 import { Dish } from './Dish';
 import './DishesGrid.css';
 
-export function DishesGrid(){
+interface prop{
+  sort: string;
+}
+
+export function DishesGrid({sort} : prop){
   return(
     <div className="dishes-grid">
 
-      <Dish />
+      <Dish sort={sort} />
 
     </div>
   );

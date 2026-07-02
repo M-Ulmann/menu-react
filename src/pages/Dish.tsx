@@ -1,11 +1,24 @@
 import { foodList } from "../assets/foodList";
 import './Dish.css';
 
-export function Dish(){
+interface sort{
+  sort: string;
+}
+
+export function Dish({sort} : sort){
+
+  const sortedList = foodList.filter((food) => {
+    if(sort === 'all' || sort === ''){
+      return food.type;
+    }
+    return food.type === sort;
+  });
+
+  console.log(sortedList);
 
   return(
     <>
-      {foodList.map((food) => {
+      {sortedList.map((food) => {
         return(
         <div key={food.name} className="dish-container">
 

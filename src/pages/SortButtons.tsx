@@ -1,18 +1,23 @@
 import './SortButtons.css';
 
-export function SortButtons(){
+interface props{
+  setSort: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export function SortButtons({setSort} : props){
+
   return(
     <div className="buttons-container">
 
-      <button className="button-all">All</button>
+      <button onClick={() => {setSort('all')}} className="button-all">All</button>
 
-      <button className="button-breakfast">Breakfast</button>
+      <button onClick={() => {setSort('breakfast')}} className="button-breakfast">Breakfast</button>
 
-      <button className="button-lunch">Lunch</button>
+      <button onClick={() => {setSort('lunch')}} className="button-lunch">Lunch</button>
 
-      <button className="button-shakes">Shakes</button>
+      <button onClick={() => {setSort('shakes')}} className="button-shakes">Shakes</button>
 
-      <button className="button-dinner">Dinner</button>
+      <button onClick={() => {setSort('dinner')}} className="button-dinner">Dinner</button>
 
       <button className="button-sort-price">
 
