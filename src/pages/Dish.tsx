@@ -25,9 +25,6 @@ export function Dish({sort, isAscending} : prop){
     }
   });
   
-  console.log(priceSortedList)
-  
-
   return(
     <>
       {priceSortedList.map((food) => {

@@ -28,7 +28,7 @@ export function SortButtons({setSort, setIsAscending, isAscending} : props){
 
       <button name='shakes' onClick={sortState} className="button-shakes">Shakes</button>
 
-      <button name='dinner' onClick={(e) => console.log(e)} className="button-dinner">Dinner</button>
+      <button name='dinner' onClick={sortState} className="button-dinner">Dinner</button>
 
       <button onClick={ascendingState} className="button-sort-price">
 
