@@ -2,9 +2,11 @@ import './SortButtons.css';
 
 interface props{
   setSort: React.Dispatch<React.SetStateAction<string>>;
+  setIsAscending: React.Dispatch<React.SetStateAction<boolean>>;
+  isAscending: boolean
 }
 
-export function SortButtons({setSort} : props){
+export function SortButtons({setSort, setIsAscending, isAscending} : props){
 
   return(
     <div className="buttons-container">
@@ -19,7 +21,7 @@ export function SortButtons({setSort} : props){
 
       <button onClick={() => {setSort('dinner')}} className="button-dinner">Dinner</button>
 
-      <button className="button-sort-price">
+      <button onClick={() => {setIsAscending(!isAscending)}} className="button-sort-price">
 
         <img className="sort-price-img" src="https://cdn-icons-png.flaticon.com/512/10407/10407117.png" alt="sort-price-icon" />
 

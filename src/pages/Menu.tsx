@@ -8,16 +8,16 @@ export function Menu(){
 
   const [sort, setSort] = useState<string>('');
 
-  console.log(sort)
+  const [isAscending, setIsAscending] = useState<boolean>(true);
 
   return (
     <>
 
       <MenuTitle />
 
-      <SortButtons setSort={setSort} />
+      <SortButtons setSort={setSort} setIsAscending={setIsAscending} isAscending={isAscending}/>
 
-      <DishesGrid sort={sort} />
+      <DishesGrid sort={sort} isAscending={isAscending}/>
 
     </>
   );

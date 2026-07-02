@@ -1,11 +1,12 @@
 import { foodList } from "../assets/foodList";
 import './Dish.css';
 
-interface sort{
+interface prop{
   sort: string;
+  isAscending: boolean;
 }
 
-export function Dish({sort} : sort){
+export function Dish({sort, isAscending} : prop){
 
   const sortedList = foodList.filter((food) => {
     if(sort === 'all' || sort === ''){
@@ -14,11 +15,22 @@ export function Dish({sort} : sort){
     return food.type === sort;
   });
 
-  console.log(sortedList);
+
+  const priceSortedList = [...sortedList].sort((priceA, priceB) => {
+    if(isAscending){
+      return priceA.price - priceB.price
+    }
+    else{
+      return priceB.price - priceA.price;
+    }
+  });
+  
+  console.log(priceSortedList)
+  
 
   return(
     <>
-      {sortedList.map((food) => {
+      {priceSortedList.map((food) => {
         return(
         <div key={food.name} className="dish-container">
 
